@@ -14,11 +14,11 @@ class ProjectsController < ApplicationController
     if @project.save
       # reminder time : flash uses the session storage and will persist through redirection
       #flash[:notice] = "Project has been created."
-      redirect_to @project, notice: "Project has been created."
+      redirect_to @project, notice: "Project has been created.\n"
     else
-      redirect_to @project, notice: "Project has NOT been created."
+      flash[:alert] = "Project has not been created."
+      render "new" 
     end
-
   end
 
   def show

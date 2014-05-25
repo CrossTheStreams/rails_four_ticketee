@@ -2,10 +2,12 @@ require 'spec_helper.rb'
 
 feature 'Creating Projects' do 
 
-  scenario "can create a project" do 
+  before do 
     visit "/"
-    click_link "New Project"
-    
+    click_link "New Project" 
+  end
+
+  scenario "can create a project" do  
     # Using field id selectors
     fill_in "project_name", with: 'TextMate 2'
     fill_in "project_description", with: 'A text-editor for OS X'
@@ -20,6 +22,13 @@ feature 'Creating Projects' do
     title = "TextMate 2 - Projects - Ticketee"
 
     expect(page).to have_title(title)
+  end
+
+  scenario "can not create a project without a name" do 
+    click_button "Create Project"
+    
+    expect(page).to have_content("Project has not been created.") 
+    expect(page).to have_content("Name can't be blank")
   end
 
 end
