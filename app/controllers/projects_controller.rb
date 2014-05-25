@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
-  def index
-    
+  def index     
+    @projects = Project.all
   end
 
   def new
@@ -9,8 +9,8 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params) 
-     
+
+    @project = Project.new(project_params)      
     if @project.save
       # reminder time : flash uses the session storage and will persist through redirection
       #flash[:notice] = "Project has been created."
@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
       flash[:alert] = "Project has not been created."
       render "new" 
     end
+
   end
 
   def show
