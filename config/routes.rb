@@ -2,6 +2,8 @@ RailsFourTicketee::Application.routes.draw do
 
   root "projects#index"
 
+  resources :users
+
   resources :projects do 
     resources :tickets
   end
