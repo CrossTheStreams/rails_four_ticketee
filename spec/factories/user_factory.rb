@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :user do
     pw = SecureRandom.hex
-    email "user@example.com"
+    email "sample@example.com"
     name "Steve"
     password pw
     password_confirmation pw
