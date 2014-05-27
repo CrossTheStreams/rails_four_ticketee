@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   # this is bad. Authentication should leverage session and should be in ApplicationController.
   def set_user
-    @user = User.find(params[:id]) 
+    @user = User.find(session[:user_id]) 
   end
 
   def user_params   
