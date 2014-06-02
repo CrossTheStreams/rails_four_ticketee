@@ -2,10 +2,13 @@ FactoryGirl.define do
   sequence(:email) do |n|
     "user#{n}@example.com"
   end
+  sequence(:name) do |n|
+    "username#{n}" 
+  end
   factory :user do
     pw = SecureRandom.hex
+    name { generate(:name)}
     email { generate(:email)}
-    name "Steve"
     password pw
     password_confirmation pw
 
