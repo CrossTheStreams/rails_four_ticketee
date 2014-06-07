@@ -8,6 +8,7 @@ feature 'Deleting tickets' do
 
   before do
     define_permission!(user, "view", project)
+    define_permission!(user, "delete tickets", project)
     visit '/' 
     sign_in_as!(user)
     click_link project.name
