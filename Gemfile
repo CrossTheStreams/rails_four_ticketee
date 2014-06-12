@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'cancan', '~> 1.6.10'
 
+gem 'carrierwave', '~> 0.9.0'
+
 group :test, :development do 
   gem 'rspec-rails'
 end
