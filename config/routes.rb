@@ -20,4 +20,6 @@ RailsFourTicketee::Application.routes.draw do
     resources :tickets
   end
 
+  resources :files
+
 end
