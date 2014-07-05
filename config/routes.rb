@@ -10,7 +10,7 @@ RailsFourTicketee::Application.routes.draw do
 
   get "/sign_in", to: "sessions#new"
   post "/sign_in", to: "sessions#create"
-  delete "/sign_out", to: "sessions#destroy", as: "signout"
+  delete "/signout", to: "sessions#destroy", as: "signout"
 
   root "projects#index"
 
